@@ -46,14 +46,14 @@ void q_short(int low, int high)
         return;
     }
 
-   pivot = arr[low]; //step 2
-   i = low = 1; // step 3
-   j = high;    // step 4
+    pivot = arr[low]; //step 2
+    i = low = 1; // step 3
+    j = high;    // step 4
 
-   while (i <= j) //step 10
-{
-    //search for an element greater than pivot 
-    while ((arr[i] <= pivot) && (i <= high)) // step 5
+    while (i <= j) //step 10
+    {
+        //search for an element greater than pivot 
+        while ((arr[i] <= pivot) && (i <= high)) // step 5
     {
         i++; //step 6
         cmp_count++;
@@ -73,16 +73,25 @@ void q_short(int low, int high)
         //swap the element at index i whit the element at index J
         swap(i, j);
     }
-}
 
-if (low < j)
-{   //step 11
-    //swap the pivot element with the element at index j
-    swap(low, j);
-}
+    }
+
+    if (low < j)
+    {   //step 11
+        //swap the pivot element with the element at index j
+        swap(low, j);
+    }
 
     //recursive call to sort the left sub array
     q_short(low, j - 1); //step 12
 
     //recursive call to sort the right sub array
     q_short(j + 1, high); //step 13
+
+}
+
+void display() 
+{
+    cout << "\n----------" << endl;
+    cout << "Sorted Array" << endl;
+    cout << "------------" << endl;
