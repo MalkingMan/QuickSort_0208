@@ -116,8 +116,9 @@ int main()
         cout << "\n\nDo you want to continue? (y/n)";
         cin >> ch;
         if (ch == 'n' || ch == 'N')
-        break;
+            break;
+
+        system("pause");
+        system('cls');
+
     }
-
-
-}
